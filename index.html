@@ -27,18 +27,16 @@
                         <i class="fas fa-search"></i></button>
                 </div>
                 
-                <div>
-                  <ul id = "searchList" class ="listItems">
-                      <li id = "cityList">1</li>
-                  </ul> 
-
+                <div class = "list-group" id = "searchList">
+                    <button id = "curSearch" type="button" class="list-group-item list-group-item-action active">
+                    </button>
                 </div>
             </div>
         
 
         <div class="col-md-9">
             <ul id="cityWeather" class="card">
-                <li id="cityName"><span id = "date">11/12/2020</span></li>
+                <li id="cityName"><span id = "date"></span><span id='curIcon'></span></li>
                 <li id="curTemp"> </li>
                 <li id="curHumidity">Humidity: </li>
                 <li id="curWind">Wind Speed: </li>
@@ -52,6 +50,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>           
     <script src ="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js" integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
     <script src ="assets/js/script.js"></script>
 </body>
 </html>

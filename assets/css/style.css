@@ -6,16 +6,28 @@
     font-family: "Cairo";
 
 }
+.input {
+
+    margin: 10px;
+}
 .card{
+    margin-top: 40px;
     width: 22rem;
     display: block;
     list-style: none;
 
 }
 #searchButton{
-    margin-left: 10px;
+    margin-left: 10px 0;
 }
 #searchList{
     list-style: none;
     margin-left: 0px;
+    width: 250px;
+}    
+#cityList {
 
+margin: 0;
+padding: 10px;
+
+}
