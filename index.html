@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
     <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <link rel = "stylesheet" href = "assets/css/style.css">
@@ -19,18 +20,13 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3 pl-2">
-                <div class="card">
-                    <div class="card-body" id="searchCity">
-                        <h6>Search for a City:</h6>
-                        <form class="form-inline">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder ="Enter City Here" id="cityInput">
-                            </div>
-                            <button id="searchButton" type="submit" class="btn btn-primary">
-                                <i class="fas fa-search"></i></button>
-                        </form>
-                    </div>
+                <div class="input">
+                    <h6>Search for a City</h6>
+                    <input type="text" class="inputValue" placeholder="Enter a City">
+                    <button id="searchButton" type="submit" class="btn btn-primary">
+                        <i class="fas fa-search"></i></button>
                 </div>
+                
                 <div>
                   <ul id = "searchList" class ="listItems">
                       <li id = "cityList">1</li>
@@ -42,8 +38,8 @@
 
         <div class="col-md-9">
             <ul id="cityWeather" class="card">
-                <li id="cityName">1<span id = "date">11/12/2020</span></li>
-                <li id="curTemp">Temperature: </li>
+                <li id="cityName"><span id = "date">11/12/2020</span></li>
+                <li id="curTemp"> </li>
                 <li id="curHumidity">Humidity: </li>
                 <li id="curWind">Wind Speed: </li>
                 <li id="curUV">UV Index: </li>
@@ -52,7 +48,8 @@
         </div>
 
        
-    </div>              
+    </div>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>           
     <script src ="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js" integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
     <script src ="assets/js/script.js"></script>

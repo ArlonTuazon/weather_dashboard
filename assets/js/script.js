@@ -1,34 +1,22 @@
-let searchCityEl = document.querySelector("#searchCity");
-let cityInputEl = document.querySelector("#cityInput");
+var button = document.querySelector('#searchButton')
+var input = document.querySelector('.inputValue')
+var nameCity = document.querySelector('#cityName');
+var desc = document.querySelector('#cityWeather');
+var temp = document.querySelector('#curTemp');
 
+button.addEventListener('click', function(){
 
-let temp = document.querySelector('#curTemp');
- window.addEventListener('load', () => {
-     getTemp();
+fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&appid=653f9a4ef4ab668df3bcf20b253fcd37')
 
- })
-  //let html = "";
- function getTemp (){
-    fetch ("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial" + "&APPID=653f9a4ef4ab668df3bcf20b253fcd37")
-    .then (response => {
-       console.log(response);
-       return response.json();
+.then(response => response.json())
+.then(data => {
+    console.log(data);
+  let cityVal = data['main']['name']; 
+  let tempVal = data['main']['temp'];
 
-    }).then (data => {
-        
-        console.log(data);
-        
+  nameCity.innerHTML = cityVal;
+  temp.innerHTML = tempVal;
+})
 
-    }).catch(error => {
-        console.log(error);
-    });
- }
- var searchSubmit = function(event) {
-    event.preventDefault();
-    console.log(event);
-  }
-function getCityTemp() {
-  
-
-}
- 
+.catch (err => alert("Wrong City")) 
+})
