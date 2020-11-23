@@ -14,12 +14,14 @@ var nMoment = moment().format('ddd MM/DD/YYYY');
 //var display = $('#date');
 //display.text(nMoment);
 console.log(nMoment)
-
+button.addEventListener('click', function(){
 getcurWeather();
+getForecast ();
+})
 
 //Function to get current weather
 function getcurWeather() {
-button.addEventListener('click', function(){
+
 
 fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&appid=653f9a4ef4ab668df3bcf20b253fcd37')
 
@@ -31,18 +33,20 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&appid=6
   let tempVal = data.main.temp;
   let windSpeed = data['wind']['speed']
 
+  let iconURL = "http://openweathermap.org/img/w/"+cIcon+".png";
+
   nameCity.innerHTML = cityVal +" " + nMoment + " " + cIcon;
   temp.innerHTML = "Temperature: " + tempVal;
   cWind.innerHTML = "Wind: " + windSpeed;
 
   cSearch.innerHTML = input.value;  
-  //curIcon.innerHTML = cIcon;  
+  curIcon.innerHTML = iconURL;
 })
 
 
 .catch (err => alert("Wrong City")) 
-})
 }
+
 
 function getForecast(){
 
@@ -51,21 +55,11 @@ function getForecast(){
     .then(response => response.json())
     .then(data => {
       console.log(data);
-    // let cityVal = data.name; 
-    // let cIcon = data['weather'][0]['icon'];
-    // let tempVal = data.main.temp;
-    // let windSpeed = data['wind']['speed']
-
-    //     nameCity.innerHTML = cityVal +" " + nMoment + " " + cIcon;
-    //     temp.innerHTML = "Temperature: " + tempVal;
-    //     cWind.innerHTML = "Wind: " + windSpeed;
-
-    //     cSearch.innerHTML = input.value;  
-        //curIcon.innerHTML = cIcon;  
+    
 })
 
 
 .catch (err => alert("Wrong City")) 
 }
 
-getForecast();
+
