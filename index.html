@@ -23,30 +23,89 @@
                 <div class="input">
                     <h6>Search for a City</h6>
                     <input type="text" class="inputValue" placeholder="Enter a City">
-                    <button id="searchButton" type="submit" class="btn btn-primary">
+                       <button id="searchButton" type="submit" class="btn btn-primary">
                         <i class="fas fa-search"></i></button>
                 </div>
+                <div id = "lat"></div>
+                <div id = "lon"></div>
                 
                 <div class = "list-group" id = "searchList">
                     <button id = "curSearch" type="button" class="list-group-item list-group-item-action active">
                     </button>
                 </div>
+                
             </div>
         
 
         <div class="col-md-9">
-            <ul id="cityWeather" class="card">
-                <li id="cityName"><span id = "date"></span><span id='curIcon'></span></li>
-                <li id="curTemp"> </li>
-                <li id="curHumidity">Humidity: </li>
+            <ul id="cityWeather" class="card" style="width: 800px;">
+                <li id="cityName">City<span id = "date"></span></li>
+                <li id="curIcon"></li>
+                <li id="curTemp">Temperature:</li>
+                <li id="curHumidity">Humidity:</li>
                 <li id="curWind">Wind Speed: </li>
                 <li id="curUV">UV Index: </li>
-            </ul>
-            <div id="fiveDay" class ="mt-5"></div>
+                
+                </ul>
+            
         </div>
-
-       
     </div>   
+        <div id="forecast">5 Day Forecast:</div>
+        <div class="container-fluid"> 
+        <div class = "card-columns" id="fiveDayColumns">
+            <div class = "card border-success" style="max-width: 10rem;" id="fiveDay">
+                <div class ="card" >
+                    <div class="card-header bg-primary text-white">
+                         <h6 id = "dayOne"></h6>
+                         <p id = "firstIcon"></p>
+                         <p id = firstTemp>Temp:</p>
+                         <p id = "firstHumid">Humidity:</p>
+                    </div>
+                </div>
+            </div>
+         <div class = "card border-success mb-3" style="max-width: 10rem;" id="secondDay">
+            <div class ="card" >
+                <div class="card-header bg-primary text-white">
+                    <h6 id = "dayTwo"></h6>
+                    <p id = "secondIcon"></p>
+                    <p id ="secondTemp">Temp:</p>
+                    <p id ="secondhumid">Humidity:</p>
+                </div>
+            </div>
+         </div>
+         <div class = "card border-success" style="max-width: 10rem;" id="thirdDay">
+            <div class ="card" >
+                <div class="card-header bg-primary text-white">
+                    <h6 id = "dayThree">Date</h6>
+                    <p id = "thirdIcon"></p>
+                    <p id = "thirdTemp">Temp:</p>
+                    <p id = "thirsHumid">Humidity:</p>
+                </div>
+            </div>
+         </div>
+         <div class = "card border-success mb-3" style="max-width: 10rem;" id="fourthDay">
+            <div class ="card" >
+                <div class="card-header bg-primary text-white">
+                    <h6 id = "dayFour"></h6>
+                    <p id = "fourthIcon"></p>
+                    <p id = "fourthTemp">Temp:</p>
+                    <p id = "fourthHumid">Humidity:</p>
+                </div>
+            </div>
+         </div>
+         <div class = "card border-success mb-3" style="max-width: 10rem;" id="fifthDay">
+            <div class ="card" >
+                <div class="card-header bg-primary text-white">
+                    <h6 id = "dayFive"></h6>
+                    <p id = "fifthIcon"></p>
+                    <p id = "fifthTemp">Temp:</p>
+                    <p id = "fifthHumid">Humidity:</p>
+                </div>
+            </div>
+         </div>
+        </div>
+        </div> 
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>           
     <script src ="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js" integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>

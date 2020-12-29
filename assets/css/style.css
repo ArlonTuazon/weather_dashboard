@@ -10,8 +10,9 @@
 
     margin: 10px;
 }
-.card{
+#cityWeather{
     margin-top: 40px;
+    
     width: 22rem;
     display: block;
     list-style: none;
@@ -24,10 +25,68 @@
     list-style: none;
     margin-left: 0px;
     width: 250px;
-}    
+} 
+#cityName{
+    font-style: "Cairo";
+    font-weight: bold;
+    font-size: 25px;
+}   
 #cityList {
 
 margin: 0;
 padding: 10px;
 
 }
+
+
+#forecast{
+    margin-left: 400px;
+    margin-right: 50px;
+    font-family: 'Cairo';
+    font-weight: bold;
+    font-size: 25px;
+}
+#fivecard {
+    margin-left:0px;
+}
+
+/* #fiveDay {
+  margin-left: 400px;
+} */
+
+/* #secondDay {
+  margin-left: 75px;  
+}
+#thirddDay {
+    margin-left: 20px;  
+}
+#fourthDay {
+    margin-left:0px;  
+}
+#fifthDay {
+    margin-left: 75px;  
+  
+} */
+#fiveDayColumns {
+    display: flex;
+    margin-left: 400px;
+}
+
+@media only screen and (max-width: 600px) {  
+
+    .card-columns {
+        position: absolute;
+        display:flex;
+     }
+    
+
+   }
+ 
+ 
+ 
+ /* Medium devices (landscape tablets, 768px and up) */
+ @media only screen and (min-width: 768px) {  
+ 
+    /* Your CSS Code for this device size */    
+ 
+ } 
