@@ -183,20 +183,20 @@ function getForecast(lat, lon){
       fiveTemp.innerHTML = "Temp: " + result4;
      
        // Five Day Forecast Humidity
-       let nexthumid = data['daily'][1]['temp']['max'];
-       oneHumid.innerHTML = "Humifdity: " + nexthumid;
+       let nexthumid = data['daily'][1]['humidity'];
+       oneHumid.innerHTML = "Humidity: " + nexthumid + "%";
       
-       let next2humid = data['daily'][2]['temp']['max'];
-       twoHumid.innerHTML = "Temp: " + next2humid;
+       let next2humid = data['daily'][2]['humidity'];
+       twoHumid.innerHTML = "Humidity: " + next2humid +"%";
       
-       let next3Humid = data['daily'][3]['temp']['max'];
-       threeHumid.innerHTML = "Temp: " + next3Humid;
+       let next3Humid = data['daily'][3]['humidity'];
+       threeHumid.innerHTML = "Humidity: " + next3Humid+ "%";
  
-       let next4temp = data['daily'][4]['temp']['max'];
-       fourHumid.innerHTML = "Temp: " + result3;
+       let next4humid = data['daily'][4]['humidity'];
+       fourHumid.innerHTML = "Humidity: " + next4humid + "%";
  
-       let next5temp = data['daily'][5]['temp']['max'];
-       fiveHumid.innerHTML = "Temp: " + result4;
+       let next5humid = data['daily'][5]['humidity'];
+       fiveHumid.innerHTML = "Humidity: " + next5humid + "%";
 
 
 })
