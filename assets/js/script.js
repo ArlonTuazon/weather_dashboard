@@ -9,7 +9,8 @@ var cDate = document.querySelector('#date');
 var cSearch = document.querySelector('#curSearch');
 var wIcon = document.querySelector('#curIcon');
 var lat = document.querySelector('#lat');
-var lon = document.querySelector('lon');
+var lon = document.querySelector('#lon');
+var notification = document.querySelector('#notify');
 var oneIcon = document.querySelector('#firstIcon');
 var twoIcon = document.querySelector('#secondIcon');
 var threeIcon = document.querySelector('#thirdIcon');
@@ -22,9 +23,10 @@ var nMoment = moment().format('(ddd MM/DD/YYYY)');
 //display.text(nMoment);
 console.log(nMoment)
 button.addEventListener('click', function(){
-    
+  
+  
     getcurWeather();
-    
+   
 })
 
 //Function to get current weather
@@ -40,24 +42,32 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&units=i
   let cIcon = response['weather'][0]['icon'];
   let tempVal = response.main.temp;
   let windSpeed = response['wind']['speed']
-  let weatherIcon = "";
+  //let weatherIcon = "";
   let wlat = response.coord.lat;
   let wlon = response.coord.lon
   console.log (wlat,wlon);
-  //let iconURL = 'https://openweathermap.org/img/w/' + cIcon+ '.png';
+  let iconURL = 'https://openweathermap.org/img/w/' + cIcon+ '.png';
+
+  
+
+
  
-  nameCity.innerHTML = cityVal +" " + nMoment;
+  nameCity.innerHTML = cityVal +" " + nMoment + "<img src = "+iconURL+">";
   temp.innerHTML = "Temperature: " + tempVal;
   cWind.innerHTML = "Wind: " + windSpeed;
   //wIcon.innerHTML = iconURL;
   cSearch.innerHTML = input.value; 
+  
+  
   console.log (wIcon,);
 
-    weatherIcon = document.createElement('img');
-  //  weatherIcon.setAttribute('src', iconURL);
-    weatherIcon.src = 'https://openweathermap.org/img/w/' + cIcon+ '.png';
-    wIcon.appendChild(weatherIcon);
-  
+  //   weatherIcon = document.createElement('img');
+  // //  weatherIcon.setAttribute('src', iconURL);
+  //   weatherIcon.src = 'https://openweathermap.org/img/w/' + cIcon+ '.png';
+  //   wIcon.appendChild(weatherIcon);
+    
+    
+
     lat = wlat;
     lon = wlon;
     console.log (lat,lon);
@@ -115,39 +125,39 @@ function getForecast(lat, lon){
       //Five Day Forecast Icon
       let ffIcon = data['daily'][1]['weather'][0]['icon'];
       
-      let day1Icon = "";
+      //let day1Icon = "";
 
-      day1Icon = document.createElement('img');
-      day1Icon.src = 'https://openweathermap.org/img/w/' + ffIcon+ '.png';
-         oneIcon.appendChild(day1Icon);
+      var day1Icon = document.querySelector('#firstIcon');
+      let day1Iconimg = 'https://openweathermap.org/img/w/' + ffIcon+ '.png';
+         day1Icon.innerHTML= "<img src = "+day1Iconimg+">"
 
       let sfIcon = data['daily'][2]['weather'][0]['icon'];
-      let day2Icon = "";
+     // let day2Icon = "";
 
-      day2Icon = document.createElement('img');
-      day2Icon.src = 'https://openweathermap.org/img/w/' + sfIcon+ '.png';
-         twoIcon.appendChild(day2Icon);
+      var day2Icon = document.querySelector('#secondIcon');
+      let day2Iconimg = 'https://openweathermap.org/img/w/' + sfIcon+ '.png';
+          day2Icon.innerHTML= "<img src = "+day2Iconimg+">"
       
       let tfIcon = data['daily'][3]['weather'][0]['icon'];
-      let day3Icon = "";
+      //let day3Icon = "";
    
-      day3Icon = document.createElement('img');
-      day3Icon.src = 'https://openweathermap.org/img/w/' + tfIcon+ '.png';
-        threeIcon.appendChild(day3Icon);
+      var day3Icon = document.querySelector('#thirdIcon');
+      let day3Iconimg = 'https://openweathermap.org/img/w/' + tfIcon+ '.png';
+          day3Icon.innerHTML= "<img src = "+day3Iconimg+">";
 
       let frIcon = data['daily'][4]['weather'][0]['icon'];
-      let day4Icon = "";
+      //let day4Icon = "";
      
-      day4Icon = document.createElement('img');
-      day4Icon.src = 'https://openweathermap.org/img/w/' + frIcon+ '.png';
-        fourIcon.appendChild(day4Icon);
+      var day4Icon = document.querySelector('#fourthIcon');
+      let day4Iconimg = 'https://openweathermap.org/img/w/' + frIcon+ '.png';
+          day4Icon.innerHTML= "<img src = "+day4Iconimg+">";
 
       let ftIcon = data['daily'][5]['weather'][0]['icon'];
-      let day5Icon = "";
+      //let day5Icon = "";
        
-      day5Icon = document.createElement('img');
-      day5Icon.src = 'https://openweathermap.org/img/w/' + ftIcon+ '.png';
-        fiveIcon.appendChild(day5Icon);
+      var day5Icon = document.querySelector('#fifthIcon');
+      let day5Iconimg = 'https://openweathermap.org/img/w/' + ftIcon+ '.png';
+          day5Icon.innerHTML= "<img src = "+day5Iconimg+">";
 
       let weathercUV = data['daily'][0]['uvi'];
       cUV.innerHTML = "UV Index: " + weathercUV;

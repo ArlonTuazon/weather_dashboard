@@ -26,6 +26,7 @@
                        <button id="searchButton" type="submit" class="btn btn-primary">
                         <i class="fas fa-search"></i></button>
                 </div>
+                <div id = "notify"></div>
                 <div id = "lat"></div>
                 <div id = "lon"></div>
                 
@@ -39,12 +40,15 @@
 
         <div class="col-md-9">
             <ul id="cityWeather" class="card" style="width: 800px;">
-                <li id="cityName">City<span id = "date"></span></li>
-                <li id="curIcon"></li>
-                <li id="curTemp">Temperature:</li>
-                <li id="curHumidity">Humidity:</li>
-                <li id="curWind">Wind Speed: </li>
-                <li id="curUV">UV Index: </li>
+                <li id="cityName">City
+                    <span id = "date"></span>
+                    <span id = "curIcon"></span>
+                </li>
+                <!-- <li id="curIcon"></li> -->
+                <li id="curTemp" style="font-weight: bold;">Temperature:</li>
+                <li id="curHumidity" style="font-weight: bold;">Humidity:</li>
+                <li id="curWind" style="font-weight: bold;">Wind Speed: </li>
+                <li id="curUV" style="font-weight: bold;">UV Index: </li>
                 
                 </ul>
             
@@ -76,7 +80,7 @@
          <div class = "card border-success" style="max-width: 10rem;" id="thirdDay">
             <div class ="card" >
                 <div class="card-header bg-primary text-white">
-                    <h6 id = "dayThree">Date</h6>
+                    <h6 id = "dayThree"></h6>
                     <p id = "thirdIcon"></p>
                     <p id = "thirdTemp">Temp:</p>
                     <p id = "thirdHumid">Humidity:</p>
