@@ -1,6 +1,7 @@
 //Initialize variables
-var button = document.querySelector('#searchButton')
-var input = document.querySelector('.inputValue')
+var button = document.querySelector('#searchButton');
+var listButton = document.querySelector('#searchList');
+var input = document.querySelector('.inputValue');
 var nameCity = document.querySelector('#cityName');
 var desc = document.querySelector('#cityWeather');
 var temp = document.querySelector('#curTemp');
@@ -29,6 +30,7 @@ button.addEventListener('click', function(){
    
 })
 
+
 //Function to get current weather
 function getcurWeather() {
 
@@ -47,18 +49,23 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&units=i
   let wlon = response.coord.lon
   console.log (wlat,wlon);
   let iconURL = 'https://openweathermap.org/img/w/' + cIcon+ '.png';
-
   
-
-
- 
   nameCity.innerHTML = cityVal +" " + nMoment + "<img src = "+iconURL+">";
   temp.innerHTML = "Temperature: " + tempVal;
   cWind.innerHTML = "Wind: " + windSpeed;
   //wIcon.innerHTML = iconURL;
   
-  cSearch.innerHTML += `<li class="list-group-item list-group-item-action">${input.value}</li>`; 
+  cSearch.innerHTML += `<li class="list-group-item list-group-item-action" id="searchItems">${input.value}</li>`; 
   
+  var listItems = document.querySelectorAll ("#curSearch li");
+  for (var i = 0; i < listItems.length; i++){
+    listItems[i].onclick =function() {
+      input.value = "";
+      document.getElementById ("cityValue").value = this.innerHTML;
+      getcurWeather();
+      
+    };
+  }
   
   console.log (wIcon,);
 

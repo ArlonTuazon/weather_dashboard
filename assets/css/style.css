@@ -37,7 +37,10 @@ margin: 0;
 padding: 10px;
 
 }
-
+#searchItems:hover {
+background-color: rgb(100, 98, 240);
+cursor: pointer;
+}
 
 #forecast{
     margin-left: 400px;
@@ -45,28 +48,13 @@ padding: 10px;
     font-family: 'Cairo';
     font-weight: bold;
     font-size: 25px;
+    
 }
 #fivecard {
     margin-left:0px;
+    position: absolute;
 }
 
-/* #fiveDay {
-  margin-left: 400px;
-} */
-
-/* #secondDay {
-  margin-left: 75px;  
-}
-#thirddDay {
-    margin-left: 20px;  
-}
-#fourthDay {
-    margin-left:0px;  
-}
-#fifthDay {
-    margin-left: 75px;  
-  
-} */
 #fiveDayColumns {
     display: flex;
     margin-left: 400px;
