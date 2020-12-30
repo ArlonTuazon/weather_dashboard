@@ -56,7 +56,8 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&units=i
   temp.innerHTML = "Temperature: " + tempVal;
   cWind.innerHTML = "Wind: " + windSpeed;
   //wIcon.innerHTML = iconURL;
-  cSearch.innerHTML = input.value; 
+  
+  cSearch.innerHTML += `<li class="list-group-item list-group-item-action">${input.value}</li>`; 
   
   
   console.log (wIcon,);
