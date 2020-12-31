@@ -54,10 +54,12 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&units=i
   temp.innerHTML = "Temperature: " + tempVal;
   cWind.innerHTML = "Wind: " + windSpeed;
   //wIcon.innerHTML = iconURL;
-  localStorage.setItem  ('city' ,cityVal);
-  localStorage.getItem(cityVal);
+  
   cSearch.innerHTML += `<li class="list-group-item list-group-item-action" id="searchItems">${input.value}</li>`; 
  
+  var newCity = input.value;
+  localStorage.setItem  ('city' ,newCity);
+  localStorage.getItem(newCity);
   
   var listItems = document.querySelectorAll ("#curSearch li");
   for (var i = 0; i < listItems.length; i++){

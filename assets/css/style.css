@@ -37,17 +37,22 @@ margin: 0;
 padding: 10px;
 
 }
+#cityWeather{
+    position: absolute;
+}
 #searchItems:hover {
 background-color: rgb(100, 98, 240);
 cursor: pointer;
 }
 
 #forecast{
+    margin-top: 200px;
     margin-left: 400px;
     margin-right: 50px;
     font-family: 'Cairo';
     font-weight: bold;
     font-size: 25px;
+    position: absolute;
     
 }
 #fivecard {
@@ -57,7 +62,9 @@ cursor: pointer;
 
 #fiveDayColumns {
     display: flex;
+    margin-top: 250px;
     margin-left: 400px;
+    position:absolute;
 }
 
 @media only screen and (max-width: 600px) {  
