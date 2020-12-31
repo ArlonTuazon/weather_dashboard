@@ -27,7 +27,7 @@ button.addEventListener('click', function(){
   
   
     getcurWeather();
-   
+    
 })
 
 
@@ -54,8 +54,10 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&units=i
   temp.innerHTML = "Temperature: " + tempVal;
   cWind.innerHTML = "Wind: " + windSpeed;
   //wIcon.innerHTML = iconURL;
-  
+  localStorage.setItem  ('city' ,cityVal);
+  localStorage.getItem(cityVal);
   cSearch.innerHTML += `<li class="list-group-item list-group-item-action" id="searchItems">${input.value}</li>`; 
+ 
   
   var listItems = document.querySelectorAll ("#curSearch li");
   for (var i = 0; i < listItems.length; i++){
@@ -111,8 +113,8 @@ function getForecast(lat, lon){
    var fiveHumid = document.querySelector('#fifthHumid'); 
 
    var cHumid = document.querySelector('#curHumidity');
-   var cUV = document.querySelector('#curUV');   
-
+   var cUV = document.querySelector('#indexUV');   
+      
    
 
    var nextDay = moment().add(1, 'd').format('MM/DD/YYYY');
@@ -168,8 +170,24 @@ function getForecast(lat, lon){
           day5Icon.innerHTML= "<img src = "+day5Iconimg+">";
 
       let weathercUV = data['daily'][0]['uvi'];
-      cUV.innerHTML = "UV Index: " + weathercUV;
+      cUV.innerHTML =  weathercUV;
 
+      if (weathercUV <= 2 ){
+        document.getElementById('indexUV').style.color = "green";
+      }
+      else if (weathercUV <=5 ){
+        document.getElementById('indexUV').style.color = "yellow";
+      }
+      else if (weathercUV <=7) {
+        document.getElementById('indexUV').style.color = "orange";
+      }
+      else if (weathercUV <=10) {
+        document.getElementById('indexUV').style.color = "red";
+      }
+      else if (weathercUV >=11) {
+        document.getElementById('indexUV').style.color = "purple";
+      }
+     
       // Current Temperature and Humidity
       let weathercHumid = data['daily'][0]['humidity'];
       cHumid.innerHTML = "Humidity: " + weathercHumid+"%";

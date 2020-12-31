@@ -18,6 +18,7 @@
     </header>
     <br>
     <div class="container-fluid">
+     
         <div class="row">
             <div class="col-md-3 pl-2">
                 <div class="input">
@@ -48,15 +49,16 @@
                 <li id="curTemp" style="font-weight: bold;">Temperature:</li>
                 <li id="curHumidity" style="font-weight: bold;">Humidity:</li>
                 <li id="curWind" style="font-weight: bold;">Wind Speed: </li>
-                <li id="curUV" style="font-weight: bold;">UV Index: </li>
+                <li id="curUV" style="font-weight: bold;">UV Index: <span id = "indexUV"></span> </li>
                 
                 </ul>
             
           </div>
      </div>
-     
+    </div>
         <div id="forecast">5 Day Forecast:</div>
-        <div class="container-fluid"> 
+        <!-- <div class="container-fluid">  -->
+        <div class="row d-block mx-auto" >
         <div class = "card-columns" id="fiveDayColumns">
             <div class = "card border-success" style="max-width: 10rem;" id="fiveDay">
                 <div class ="card" >
@@ -111,6 +113,7 @@
          </div>
         </div> 
     </div>
+<!-- </div> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>           
     <script src ="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js" integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
